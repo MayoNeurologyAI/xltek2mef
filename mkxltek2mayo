@@ -1,0 +1,11 @@
+echo ""
+echo ""
+echo "-------------- MEF 2 -------------"
+echo ""
+echo ""
+echo ""
+echo ""
+echo "-------------- MEF 3 -------------"
+echo ""
+echo ""
+gcc -o xltek2mef3 -g -m64 -DOUTPUT_TO_MEF3 meflib.c mefrec.c write_mef_channel.c XLTek2Mayo.c -lm
