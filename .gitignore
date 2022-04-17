@@ -53,6 +53,7 @@ dkms.conf
 
 # mac
 .DS_Store/
+.DS_Store
 
 # Project specific exceptions
 *.mefd/
