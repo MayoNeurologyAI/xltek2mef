@@ -50,3 +50,11 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# mac
+.DS_Store/
+
+# Project specific exceptions
+*.mefd/
+*.dSYM
+xltek2mef3
