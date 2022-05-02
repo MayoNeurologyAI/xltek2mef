@@ -1266,6 +1266,7 @@ void	open_output_files(GLOBALS *globals)
 {
 	si4	i, num_recorded_chans, *rec_to_phys_chan_map, chan_idx;
 	si1	str_temp[1024], **chan_names, *mef_header;
+    si1 headbox_type_string[1024];
 	FILE	**dfps, **tfps;
     FILE    *montage_file;
     int lpf_value;
@@ -1343,6 +1344,11 @@ void	open_output_files(GLOBALS *globals)
 
     write_all_montages_to_file(globals);
 
+    if (globals->header_info.num_headboxes >= 1)
+        sprintf(headbox_type_string, "headbox_type=%d", globals->header_info.headbox_types[0]);
+    else
+        sprintf(headbox_type_string, "not_entered");
+
     fprintf(stderr, "\nCreating EEG output channel directories...\n");
 
     
@@ -1405,7 +1411,7 @@ void	open_output_files(GLOBALS *globals)
                                         chan_idx + 1,             // chan number
                                         str_temp,      // absolute path of session
                                         -6.0,                  // GMT offset
-                                        "not_entered",        // session description
+                                        headbox_type_string,        // session description
                                         "not_entered",                // anonymized subject name
                                         globals->anonymize_output ? "not_entered" : globals->header_info.pt_middlename,         // subject first name
                                         globals->anonymize_output ? "not_entered" : globals->header_info.pt_surname,                 // subject second name
