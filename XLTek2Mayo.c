@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
+#include <sys/resource.h>
 #include <math.h>
 #ifndef _WIN32
 #include <unistd.h>
