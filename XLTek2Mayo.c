@@ -2925,7 +2925,7 @@ si4 read_epo_file(EVENT_PTR* event_ptrs, GLOBALS* globals, si4 event_cnt, si4 di
 #ifdef _WIN32
     sprintf(command, "\"\"c:\\program files\\7-zip\\7zG\" x \"%s/%s.epo\" -o%s\"", temp_epo_folder, globals->dir_list[dir_idx].name, temp_epo_folder);
 #else
-    sprintf(command, "./7zz x \"%s/%s.epo\" -o%s", temp_epo_folder, globals->dir_list[dir_idx].name, temp_epo_folder);
+    sprintf(command, "7zz x \"%s/%s.epo\" -o%s", temp_epo_folder, globals->dir_list[dir_idx].name, temp_epo_folder);
     fprintf(stderr, "Command to run: %s\n", command);
 #endif
 #ifdef _WIN32
